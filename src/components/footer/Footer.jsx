@@ -1,6 +1,7 @@
 import style from "./Footer.module.scss";
 import Logo from "../../assets/Hancock logo.png";
 
+// HUSK AT LAVE FUNKTIONALITET TIL SIGN UP NEWSLETTER
 export const Footer = () => {
   return (
     <footer className={style.footerStyle}>
