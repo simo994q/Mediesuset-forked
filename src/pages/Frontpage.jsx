@@ -32,11 +32,13 @@ export const Frontpage = () => {
 
   // Effect to re-fetch selected news when selected ID changes
   useEffect(() => {
-    let url = `https://api.mediehuset.net/mediesuset/news/${selectedID}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setNewsDetails(data))
-      .catch((err) => console.error(err));
+    if (selectedID) {
+      let url = `https://api.mediehuset.net/mediesuset/news/${selectedID}`;
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => setNewsDetails(data))
+        .catch((err) => console.error(err));
+    }
   }, [selectedID]);
 
   return (
@@ -46,6 +48,7 @@ export const Frontpage = () => {
         {news?.items?.map((item) => {
           return (
             <NewsCard
+              key={item.id}
               title={item.title}
               text={item.teaser}
               imgSrc={item.image}
