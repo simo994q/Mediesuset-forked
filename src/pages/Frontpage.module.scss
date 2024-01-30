@@ -1,0 +1,7 @@
+.newsCardWrapper {
+  display: grid;
+  width: 90%;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
