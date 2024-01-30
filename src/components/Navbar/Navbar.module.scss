@@ -1,0 +1,29 @@
+.navbarStyle {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  div {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 80%;
+    }
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: center;
+    align-items: center;
+    li {
+      list-style: none;
+      text-align: center;
+      a {
+        color: black;
+      }
+    }
+  }
+}
