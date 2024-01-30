@@ -1,3 +1,9 @@
+import { Title } from "../components/Title/Title";
+
 export const Frontpage = () => {
-  return <div>Frontpage</div>;
+  return (
+    <>
+      <Title title="Nyheder" />
+    </>
+  );
 };
