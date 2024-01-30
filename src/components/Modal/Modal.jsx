@@ -1,16 +1,15 @@
 import style from "./Modal.module.scss";
 
 // Todo - create content in this thing
-export const Modal = (props) => {
-  const { handleModal, isModalOpen } = props;
-
+// Move fetch image into hook
+export const Modal = ({ handleModal, isModalOpen, children }) => {
   return (
     <>
       {isModalOpen && (
         <>
           <div className={style.modalBg}>
             <section className={style.modalStyle}>
-              <p>Hello modal</p>
+              {children}
               <button onClick={handleModal}>Close</button>
             </section>
           </div>
