@@ -6,12 +6,16 @@ import { getDayFromDate } from "../../helpers/getDayFromDate";
 import { getEventColor } from "../../helpers/getEventColor";
 import { useFetch } from "../../hooks/useFetch";
 import style from "../Eventpage/Eventpage.module.scss";
+import { Modal } from "../../components/Modal/Modal";
 
 export const Eventpage = () => {
-  const events = useFetch("https://api.mediehuset.net/mediesuset/events");
+  const [eventID, setEventID] = useState(2);
   const [selectedEvent, setSelectedEvent] = useState("0");
-
-  console.log(selectedEvent);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const events = useFetch("https://api.mediehuset.net/mediesuset/events");
+  const eventDetails = useFetch(
+    `https://api.mediehuset.net/mediesuset/events/${eventID}`
+  );
   const daysInWeek = [
     "Mandag",
     "Tirsdag",
@@ -22,7 +26,14 @@ export const Eventpage = () => {
     "Søndag",
   ];
 
-  console.log(events);
+  const handleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const handleEventID = (id) => {
+    handleModal();
+    setEventID(id);
+  };
 
   return (
     <>
@@ -37,6 +48,7 @@ export const Eventpage = () => {
                   key={item.id}
                   title={item.title}
                   image={item.image}
+                  setEventID={() => handleEventID(item.id)}
                   date={`${
                     daysInWeek[getDayFromDate(item.local_time)]
                   } kl. ${item.local_time.substring(11, 16)}`}
@@ -48,6 +60,27 @@ export const Eventpage = () => {
           <h3>Could not load events - try again</h3>
         )}
       </section>
+
+      <Modal isModalOpen={isModalOpen} handleModal={handleModal}>
+        <article className={style.eventModalWrapper}>
+          <h3
+            style={{
+              backgroundColor: getEventColor(eventDetails?.item?.stage_id),
+            }}
+          >
+            {eventDetails?.item?.stage_name}{" "}
+            {daysInWeek[getDayFromDate(eventDetails?.item?.local_time)]} kl.{" "}
+            {eventDetails?.item?.local_time.substring(11, 16)}
+          </h3>
+          <div>
+            <img
+              src={eventDetails?.item?.image}
+              alt={eventDetails?.item?.title}
+            />
+            <p>{eventDetails?.item?.description}</p>
+          </div>
+        </article>
+      </Modal>
     </>
   );
 };
