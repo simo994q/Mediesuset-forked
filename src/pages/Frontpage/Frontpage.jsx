@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { NewsCard } from "../components/NewsCard/NewsCard";
-import { Title } from "../components/Title/Title";
-import { Modal } from "../components/Modal/Modal";
+import { NewsCard } from "../../components/NewsCard/NewsCard";
+import { Title } from "../../components/Title/Title";
+import { Modal } from "../../components/Modal/Modal";
 import style from "./Frontpage.module.scss";
 
 export const Frontpage = () => {

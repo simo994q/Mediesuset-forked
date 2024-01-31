@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Camppage } from "./pages/Camppage";
-import { Frontpage } from "./pages/Frontpage";
-import { Eventpage } from "./pages/Eventpage";
-import { Infopage } from "./pages/Infopage";
-import { Ticketpage } from "./pages/Ticketpage";
-import { Loginpage } from "./pages/Loginpage";
+import { Camppage } from "./pages/Camppage/Camppage";
+import { Frontpage } from "./pages/Frontpage/Frontpage";
+import { Eventpage } from "./pages/Eventpage/Eventpage";
+import { Infopage } from "./pages/Infopage/Infopage";
+import { Ticketpage } from "./pages/Ticketpage/Ticketpage";
+import { Loginpage } from "./pages/Loginpage/Loginpage";
 import { MainLayout } from "./layout/MainLayout";
 
 function App() {
