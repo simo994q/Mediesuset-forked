@@ -2,7 +2,33 @@
   display: grid;
   align-items: center;
   justify-content: start;
-  img {
-    width: 100%;
+  width: 100%;
+  div {
+    position: relative;
+    height: 260px;
+    width: 380px;
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  figcaption {
+    height: 10vh;
+    color: white;
+    background-color: black;
+    padding: 8px;
+    p:nth-child(1) {
+      font-size: 1.6rem;
+    }
+    p:nth-child(2) {
+      font-size: 1.2rem;
+    }
   }
 }

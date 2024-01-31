@@ -1,10 +1,12 @@
 import style from "../EventCard/EventCard.module.scss";
 
-export const EventCard = ({ image, title, date }) => {
+export const EventCard = ({ image, title, date, stageColor }) => {
   return (
     <figure className={style.eventCardStyle}>
-      <img src={image} />
-      <figcaption>
+      <div>
+        <img src={image} />
+      </div>
+      <figcaption style={{ backgroundColor: stageColor }}>
         <p>{title}</p>
         <p>{date}</p>
       </figcaption>

@@ -3,15 +3,14 @@ import { NewsCard } from "../../components/NewsCard/NewsCard";
 import { Title } from "../../components/Title/Title";
 import { Modal } from "../../components/Modal/Modal";
 import style from "./Frontpage.module.scss";
+import { useFetch } from "../../hooks/useFetch";
 
 export const Frontpage = () => {
   // Modal state (open/closed)
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // States for setting data
-  const [newsDetails, setNewsDetails] = useState();
-  const [news, setNews] = useState();
+
   // State for selecting ID on news article
-  const [selectedID, setSelectedID] = useState();
+  const [selectedID, setSelectedID] = useState(1);
 
   // Handler func to set selected ID and open/close modal
   const handleModal = (id) => {
@@ -21,25 +20,10 @@ export const Frontpage = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  // Effect to fetch all news on component mount
-  useEffect(() => {
-    let url = `https://api.mediehuset.net/mediesuset/news`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setNews(data))
-      .catch((err) => console.error(err));
-  }, []);
-
-  // Effect to re-fetch selected news when selected ID changes
-  useEffect(() => {
-    if (selectedID) {
-      let url = `https://api.mediehuset.net/mediesuset/news/${selectedID}`;
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) => setNewsDetails(data))
-        .catch((err) => console.error(err));
-    }
-  }, [selectedID]);
+  const news = useFetch(`https://api.mediehuset.net/mediesuset/news`);
+  const newsDetails = useFetch(
+    `https://api.mediehuset.net/mediesuset/news/${selectedID}`
+  );
 
   return (
     <>

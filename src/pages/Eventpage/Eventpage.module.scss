@@ -1,4 +1,19 @@
 .eventPageWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  width: 70%;
+  margin: auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+@media only screen and (max-width: 1467px) {
+  .eventPageWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 967px) {
+  .eventPageWrapper {
+    grid-template-columns: 1fr;
+  }
 }
