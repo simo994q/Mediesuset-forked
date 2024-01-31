@@ -6,7 +6,7 @@ const EventModal = ({ isOpen, eventInfo, setIsOpen }) => {
     console.log(eventInfo);
     return (
         <>
-            <div className={style.modalBg} style={{ display: isOpen ? 'block' : 'none' }} onClick={() => setIsOpen(false)}>
+            <div className={style.modalBg} style={{ display: isOpen ? 'block' : 'none' }} >
                 <figure className={style.modalWrapper}>
                 <img src="./close.svg" alt="" className={style.close} onClick={() => setIsOpen(false)}/>
 
