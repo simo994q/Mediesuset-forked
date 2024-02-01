@@ -31,7 +31,11 @@ export const Navbar = () => {
           <NavLink to="/info">PRAKTISK INFO</NavLink>
         </li>
         <li>
+          {userData ? 
+          <NavLink to="/login">MIN SIDE</NavLink>
+          :
           <NavLink to="/login">LOGIN</NavLink>
+        }
         </li>
       </ul>
     </nav>

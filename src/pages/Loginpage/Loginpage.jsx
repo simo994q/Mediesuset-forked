@@ -55,22 +55,31 @@ export function Loginpage() {
     <>
       <Title title={"Login"} />
 
-      <form
-        className={style.loginFormStyle}
-        onSubmit={(event) => handleSignUp(event)}
-      >
-        {message && <b>{message}</b>}
+      {message && <b>{message}</b>}
 
-        <label>
-          Username:
-          <input type="text" name="username"></input>
-        </label>
-        <label>
-          Password:
-          <input type="password" name="password"></input>
-        </label>
-        <input type="submit" value="Sign up"></input>
-      </form>
+      {userData ?
+        <>
+        <button>Mit program</button>
+        <button>Log ud</button>
+        </>
+
+        :
+        <form
+          className={style.loginFormStyle}
+          onSubmit={(event) => handleSignUp(event)}
+        >
+
+          <label>
+            Username:
+            <input type="text" name="username"></input>
+          </label>
+          <label>
+            Password:
+            <input type="password" name="password"></input>
+          </label>
+          <input type="submit" value="Sign up"></input>
+        </form>
+      }
     </>
   );
 }
