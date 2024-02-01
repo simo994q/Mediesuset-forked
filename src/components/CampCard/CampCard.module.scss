@@ -1,0 +1,44 @@
+.campCardStyle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 5vh;
+  img {
+    width: 100%;
+  }
+  p {
+    margin: 8px;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: -webkit-fill-available;
+    button {
+      width: 100%;
+      height: 40px;
+      border: none;
+      cursor: pointer;
+    }
+    ul {
+      margin: 8px;
+      li {
+        margin: 4px;
+        list-style-type: none;
+      }
+    }
+    h3 {
+      text-align: center;
+      width: 100%;
+      font-size: 1.5rem;
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+    }
+
+    button {
+      align-self: end;
+      justify-self: end;
+    }
+  }
+}

@@ -1,8 +1,12 @@
 import { NavLink } from "react-router-dom";
 import style from "./Navbar.module.scss";
 import Logo from "../../assets/Logo.png";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 export const Navbar = () => {
+  const { userData } = useContext(UserContext);
+
   return (
     <nav className={style.navbarStyle}>
       <div>
