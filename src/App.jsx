@@ -6,6 +6,7 @@ import { Infopage } from "./pages/Infopage/Infopage";
 import { Ticketpage } from "./pages/Ticketpage/Ticketpage";
 import { Loginpage } from "./pages/Loginpage/Loginpage";
 import { MainLayout } from "./layout/MainLayout";
+import { TicketCheckoutpage } from "./pages/TicketCheckoutpage/TicketCheckoutpage";
 
 function App() {
   return (
@@ -19,6 +20,10 @@ function App() {
             <Route path="/camps" element={<Camppage />} />
             <Route path="/info" element={<Infopage />} />
             <Route path="/billetter" element={<Ticketpage />} />
+            <Route
+              path="/billetter/checkout/:id"
+              element={<TicketCheckoutpage />}
+            />
             <Route path="/login" element={<Loginpage />} />
           </Route>
         </Routes>
