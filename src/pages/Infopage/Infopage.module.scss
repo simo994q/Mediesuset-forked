@@ -1,0 +1,27 @@
+.infoContainer {
+  display: grid;
+  width: 70%;
+  margin: auto;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-bottom: 5vh;
+
+  p:nth-child(1) {
+    width: 60%;
+    margin: auto;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 32px;
+  }
+  div {
+    img {
+      width: 100%;
+      margin: auto;
+    }
+    padding-bottom: 32px;
+    border-bottom: solid 1px (rgba(33, 33, 33, 0.7));
+  }
+}
