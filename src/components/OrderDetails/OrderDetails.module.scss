@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+    gap: 5rem;
+    padding: 2rem;
+}
+
+.campSect {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sendSect {
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
