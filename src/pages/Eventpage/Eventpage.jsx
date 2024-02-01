@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { EventBar } from "../../components/EventBar/EventBar";
 import { EventCard } from "../../components/EventCard/EventCard";
 import { Title } from "../../components/Title/Title";
@@ -7,11 +7,14 @@ import { getEventColor } from "../../helpers/getEventColor";
 import { useFetch } from "../../hooks/useFetch";
 import style from "../Eventpage/Eventpage.module.scss";
 import { Modal } from "../../components/Modal/Modal";
+import { UserContext } from "../../context/UserContext";
 
 export const Eventpage = () => {
   const [eventID, setEventID] = useState(2);
   const [selectedEvent, setSelectedEvent] = useState("0");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { userData } = useContext(UserContext);
+
   const events = useFetch("https://api.mediehuset.net/mediesuset/events");
   const eventDetails = useFetch(
     `https://api.mediehuset.net/mediesuset/events/${eventID}`
@@ -35,6 +38,8 @@ export const Eventpage = () => {
     setEventID(id);
   };
 
+  console.log(events);
+
   return (
     <>
       <Title title={"Events"} />
@@ -45,10 +50,13 @@ export const Eventpage = () => {
             if (item.stage_id === selectedEvent || selectedEvent === "0")
               return (
                 <EventCard
+                  userID={userData ? userData.user_id : null}
                   key={item.id}
                   title={item.title}
                   image={item.image}
                   setEventID={() => handleEventID(item.id)}
+                  eventID={item.id}
+                  token={userData ? userData.access_token : null}
                   date={`${
                     daysInWeek[getDayFromDate(item.local_time)]
                   } kl. ${item.local_time.substring(11, 16)}`}

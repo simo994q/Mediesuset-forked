@@ -5,8 +5,8 @@ import { Eventpage } from "./pages/Eventpage/Eventpage";
 import { Infopage } from "./pages/Infopage/Infopage";
 import { Ticketpage } from "./pages/Ticketpage/Ticketpage";
 import { Loginpage } from "./pages/Loginpage/Loginpage";
-import { MainLayout } from "./layout/MainLayout";
 import { TicketCheckoutpage } from "./pages/TicketCheckoutpage/TicketCheckoutpage";
+import { MainLayout } from "./layout/MainLayout";
 
 function App() {
   return (
