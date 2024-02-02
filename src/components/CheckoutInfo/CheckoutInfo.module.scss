@@ -1,0 +1,22 @@
+.info1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    border-bottom: 1px solid gray;
+    font-size: 1.2rem;
+
+    input {
+        width: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+.info2 {
+    display: flex;
+    justify-content: end;
+    gap: 3rem;
+    padding: 2rem;
+    border-bottom: 1px solid gray;
+    font-size: 1.2rem;
+
+}

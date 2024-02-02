@@ -1,0 +1,21 @@
+.darkHeading {
+    background-color: #333;
+
+    p {
+        color: white;
+        font-size: 1.8rem;
+        padding: 24px;
+    }
+}
+
+.wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.info {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}

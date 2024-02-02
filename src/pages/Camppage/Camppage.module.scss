@@ -1,8 +1,40 @@
-.allCampsWrapper {
+.campWrapper {
+  display: grid;
+  width: 80%;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: start;
+  gap: 8px;
+  margin-top: 5vh;
+}
+
+.modalWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+
+  div {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1000px;
-    margin: auto;
+    grid-template-columns: 1fr 1fr;
+    div {
+      display: flex;
+      flex-direction: column;
+      p {
+        padding: 4px;
+        text-align: end;
+        margin-right: 3vw;
+      }
+    }
+    img {
+      width: 100%;
+      margin: auto;
+    }
+  }
+
+  ul {
+    li {
+      list-style-type: none;
+    }
+  }
 }
