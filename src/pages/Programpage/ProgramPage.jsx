@@ -44,16 +44,16 @@ export const ProgramPage = () => {
 
             {userData ?
                 <>
-                    <h3>Dine events</h3>
+                    <h3 style={{textAlign: 'center'}}>Dine events</h3>
                 </>
                 :
                 <>
-                    <h2>Du skal være logget ind for at se dine events</h2>
+                    <h2 style={{textAlign: 'center'}}>Du skal være logget ind for at se dine events</h2>
                 </>
             }
             {userEvents ?
                 <>
-                    {userEvents.items.length ?
+                    {userEvents.items ?
                         userEvents.items.sort(compare).map((item, i) => {
                             return (
                                 <UserProgramEvent key={i} theRef={refresh} setRef={setRefesh} date={item.datetime} title={item.event_title} stage={item.stage_name} id={item.id} />
@@ -61,13 +61,13 @@ export const ProgramPage = () => {
                         })
                         :
                         <>
-                            No events
+                            <p style={{textAlign: 'center'}}>No events</p>
                         </>
                     }
                 </>
                 :
                 <>
-                    <NavLink to='/login'>Log ind her</NavLink>
+                    <NavLink to='/login'  style={{textAlign: 'center'}}>Log ind her</NavLink>
                 </>
             }
         </>

@@ -1,13 +1,13 @@
 import { useContext, useState } from "react";
 import { EventBar } from "../../components/EventBar/EventBar";
 import { EventCard } from "../../components/EventCard/EventCard";
+import { Modal } from "../../components/Modal/Modal";
 import { Title } from "../../components/Title/Title";
+import { UserContext } from "../../context/UserContext";
 import { getDayFromDate } from "../../helpers/getDayFromDate";
 import { getEventColor } from "../../helpers/getEventColor";
 import { useFetch } from "../../hooks/useFetch";
 import style from "../Eventpage/Eventpage.module.scss";
-import { Modal } from "../../components/Modal/Modal";
-import { UserContext } from "../../context/UserContext";
 
 export const Eventpage = () => {
   const [eventID, setEventID] = useState(2);

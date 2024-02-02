@@ -55,12 +55,11 @@ export function Loginpage() {
     <>
       <Title title={"Login"} />
 
-      {message && <b>{message}</b>}
+      {!userData && message && <b style={{textAlign: 'center'}}>{message}</b>}
 
       {userData ?
         <>
-        <button>Mit program</button>
-        <button>Log ud</button>
+          <div style={{textAlign: 'center'}}>Du er nu logget ind som {userData.user.firstname}</div>
         </>
 
         :
