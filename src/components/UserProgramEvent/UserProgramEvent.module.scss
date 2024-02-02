@@ -1,0 +1,34 @@
+.wrapper {
+    display: flex;
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    border-bottom: 1px solid grey;
+
+    .date {
+        padding: 1rem;
+        font-size: 1.25rem;
+        color: white;
+        display: flex;
+        align-items: center;
+    }
+
+    .name {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        justify-content: space-between;
+        text-transform: uppercase;
+
+        p {
+            width: 100%;
+            font-size: 1.25rem;
+        }
+
+        img {
+            height: 100%;
+            cursor: pointer;
+        }
+    }
+}
