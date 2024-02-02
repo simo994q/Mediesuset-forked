@@ -38,13 +38,13 @@ export const Eventpage = () => {
     setEventID(id);
   };
 
+   
   console.log(events);
 
   return (
     <>
       <Title title={"Events"} />
       <EventBar setSelectedEvent={setSelectedEvent} />
-      <EventModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} eventInfo={eventInfo} />
       <section className={style.eventPageWrapper}>
         {events ? (
           events?.items.map((item) => {
@@ -62,8 +62,6 @@ export const Eventpage = () => {
                     daysInWeek[getDayFromDate(item.local_time)]
                   } kl. ${item.local_time.substring(11, 16)}`}
                   stageColor={getEventColor(item.stage_id)}
-                  setModal={setIsModalOpen}
-                  setInfo={setEventInfo}
                 />
               );
           })
